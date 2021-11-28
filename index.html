@@ -1,0 +1,223 @@
+DOCTYPE html>
+  <html lang="en">
+  <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <link rel="stylesheet" href="css/style2.css">
+      <title>Contra</title>
+  </head>
+  
+  <body>
+      <div id="seleccionRegistro">
+           <label for="slcTipo" required>Tipo de usuario:</label>
+              <select class="select" id="slcTipo" name="select">
+                  <option value="Docente">Docente</option>
+                  <option value="Alumno">Alumno</option>
+                  </select>
+  
+                  <select class="select" id="selectDos" style="display:none;">
+                      
+                  </select>
+  
+  
+              <label for="txtNombre">Nombre:</label>
+              <input type="text" id="txtNombre"><br>
+              <label for="nombreu">Nombre de Usuario</label>
+              <input type="text" id="nombreu" name="nombreu">
+  
+              <label for="cts">Contraseña</label>
+              <input id="cts" name="cts" pattern="(?=.\d)(?=.[a-z])(?=.*[A-Z]).{4,}"
+                  title="Debe contener minimo 1 numero, 1 letra mayuzcula, 1 letra minuzcula y minimo de 4 caracteres">
+  
+              <input type="submit" id= "btnregistro" value="Registrarse">
+  
+          </div>
+  
+  
+      <div id="msj">
+          <h3>Contraseña debe cumplir con las siguientes condiciones:</h3>
+          <p id="letra" class= "no">1 Minúscula</p>
+          <p id="may" class= "no">1 Mayúscula </p>
+          <p id="num" class= "no">1 Número </p>
+          <p id="largo" class= "no">Mínimo 4 Caracteres</p>
+      </div>
+  
+      <hr>
+      <div id= "seleccionIngresar" >
+          <p id="pResultado"></p>
+         <p>Ya estas registrado?</p>
+          <li id="btnSeccionIngresar" > 
+            <a> Ingresar</a>
+          </li>
+  
+        </div>
+  
+      </div>
+      <div id= "seleccionIngresar1">
+  
+      <h1>Ingresar</h1>
+      <label for="txtBusquedaUSU"><b>Nombre de Usuario:</b></label>
+        <input type="text" placeholder="Ingresar Nombre de Usuario" id="txtBusquedaUSU">
+        <label for="txtBusquedaCONTRA"><b>Contraseña:</b></label>
+        <input type="password" placeholder="Ingresar Contraseña" name="psw1" id="txtBusquedaCONTRA" required>
+        <input type="button" value="Ingresar" id="btnIngresar1" class="button">
+  
+  
+      </div>
+      <div id="seleccionAppAlumno">
+          <h1>Aplicacion Alumno</h1>
+          <div >
+            <ul >
+              <li  id="btnVerEjercicios">
+                <a>Ver ejercicios</a>
+                <input type="button" value="Volver" id="btnVolver" class="button">
+              </li>
+            
+            </ul>
+           
+          </div>
+          <div id="VerEjerciciosAlumnos">
+            <table id="tablaEjerciciosAlumno"style=" border: 1px solid black; border-collapse: collapse;"frame=hsides rules=rows> 
+     
+              <tr>
+                  <td>Nivel</td>
+                  <td>Titulo</td>
+                  <td>Letra</td> 
+                  <td>Imagen</td>
+                </tr>
+                
+          </table>
+          </div>
+          <ul >
+              <li  id="btnEntregas">
+                <a>Realizar una entrega</a>
+              </li>
+            
+            </ul>
+          <div id="divEntrega"style="display: none;">
+  
+            <label for="slcElegirTarea" required>Seleccionar ejercicio:</label>
+            <select class="select" id="slcEjercicio">
+                <option value="XXX">IXXX</option>
+                <option value="AXX">AXX</option>
+                </select>
+  
+          
+              <textarea name="comment" rows="10"placeholder="Solucion:" id="txtSolucion" cols="100"></textarea> 
+              <br>
+              <label for="fileAudio">Seleccionar audio:</label>
+     
+              <select id="slcAudio">
+                   <option>Seleccione un audio</option>
+                   <option value="/audios/ej1.m4a">Audio 1</option>
+                   <option value="/audios/ej2.m4a">Audio 2</option>
+                   <option value="/audios/ej3.m4a">Audio 3</option>
+              </select>
+              <p>Vista previa del audio</p>
+              <audio controls id ="audioControl">
+                  <source id="audioS"></source>
+              </audio>
+              <br>
+              <input type="button" value="Entregar" id="btnTareas" class="button">
+                  <br>
+              <input type="button" value="Volver" id="btnVolver" class="button">
+          </div>
+      </div>
+      
+      
+      <p id="pResultado1"></p>
+      <div id="seleccionAppDocente">
+          <h1>Aplicacion docente</h1>
+          <div >
+            <ul >
+              <li  id="btnBuscarAlumnoNivel">
+                <a>Cambiar nivel de alumnos</a>
+              </li>
+            
+            </ul>
+           
+          </div>
+          <div id="BuscarAlumnoNivel">
+          <p>Asignar nivel a alumnos</p>
+          <label for="txtNivelalumnos"><b>Nombre de alumno:</b></label>
+        <input type="text" placeholder="Ingresar Nombre " id="txtNivelalumnos">
+        <input type="button" value="Buscar" id="btnBuscar" class="button">
+          </div>
+       
+        <p id="pResultadoNivel"></p>
+   
+  
+      <div id= "seleccionNivel">
+          <label for="slcNivel" required>Asignar nuevo nivel o mantener el actual:</label>
+          <select class="select" id="slcNivel">
+              <option value="Intermedio">Intermedio</option>
+              <option value="Avanzado">Avanzado</option>
+              </select>
+              <input type="button" value="Asignar nivel" id="btnAsignarNivel" class="button">
+        <p id="pResultadoNivelguardado"></p>
+  
+  
+  
+           </div>
+           <div >
+              <ul >
+                <li  id="btnCargarEjercicio">
+                  <a>Cargar ejercicios</a>
+                </li>
+              
+              </ul>
+             
+            </div>
+           <div id="cargarEjercicio">
+             <h1>Ingresar ejercicio</h1>
+             <label for="slcNivelEjercicio" required>Nivel de ejercicio:</label>
+          <select class="select" id="slcNivelEjercicio" name="select">
+            <option value="Inicial">Inicial</option>
+              <option value="Intermedio">Intermedio</option>
+              <option value="Avanzado">Avanzado</option>
+              </select>
+  
+           <label for="txtEjercicios"><b>Titulo de ejercicio:</b></label>
+           <input type="text" placeholder="Titulo:" id="txtEjerciciosTitulos">
+           <textarea name="comment" rows="5"placeholder="Letra del ejercicio:" id="txtEjerciciosLetra" cols="50"></textarea> 
+     <br>
+     <label for="fileFoto">Seleccionar imagen:</label>
+     
+     <select class="select" id="slcFotos">
+          <option>Seleccione una imagen</option>
+          <option value="imgs/Ejercicio1.jpg">Imagen 1</option>
+          <option value="imgs/Ejercicio2.jpg">Imagen 2</option>
+          <option value="imgs/Ejercicio3.jpg">Imagen 3</option>
+     </select>
+              
+     <br>
+     <input type="button" value="Agregar ejercicio" id="btnAgregarEjercicio" class="button">
+  
+     
+     <table id="tablaEjercicios"style=" border: 1px solid black; border-collapse: collapse;"frame=hsides rules=rows> 
+     
+         <tr>
+            <td>Nivel</td>
+             <td>Titulo</td>
+             <td>Letra</td> 
+             <td>Imagen</td>
+           </tr>
+           
+     </table>
+    
+    </div>
+    <div id="VolverAtras">
+      <input type="button" value="Volver" id="btnVolverDos" class="button">
+     </div>
+  </div>  
+  
+      
+  
+  
+  
+  
+      <script src="/js/codigo.js"></script>
+  </body>
+  
+  </html>
