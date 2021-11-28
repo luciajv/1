@@ -70,7 +70,7 @@ document.getElementById("msj").style.display = "none";
 
 // Cuando la persona escriba en el campo de contraseña muestre msj
 miIngreso.onkeyup = function() {
-// Validar minuzcula
+// Validar minúsculas
 let lowerCaseLetters = /[a-z]/g;
 if(miIngreso.value.match(lowerCaseLetters)) {
 letra.classList.remove("no");
@@ -93,7 +93,7 @@ may.classList.add("no");
 
 }
 
-// Validar numberos
+// Validar números
 let nums = /[0-9]/g;
 if(miIngreso.value.match(nums)) {
 num.classList.remove("no");
@@ -189,7 +189,7 @@ let registro6 = new Registro("Pedro","Pedri","password4","Docente");
   // Validar mayuscula 
   let upperCaseLetters = /[A-Z]/g;
  
-  // Validar numberos
+  // Validar números
   let nums = /[0-9]/g;
   
   
